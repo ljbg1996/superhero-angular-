@@ -1,0 +1,42 @@
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  background-color: #007bff;
+  width: 150px;
+  height: 80px;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  transform: scale(1.08);
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-item span {
+  flex-basis: 50%;
+  text-align: center;
+}
+
+.fotoSize {
+  width: 100px;
+  height: 200px;
+}
+
+.image-container {
+  transition: transform 0.5s ease-in-out;
+}

@@ -1,0 +1,62 @@
+$primary-color: #3498db;
+$secondary-color: #7f8c8d;
+$warning-color: #f39c12;
+$btn-purple: rgb(168, 127, 255);
+
+h2.display-4 {
+  font-size: 2.5rem;
+  color: $primary-color;
+  font-weight: bold;
+}
+
+.list-group-item {
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: lighten($primary-color, 10%);
+  }
+
+  &.bg-light {
+    background-color: #f8f9fa;
+  }
+
+  &.font-weight-bold {
+    font-weight: bold;
+  }
+
+  &.font-weight-normal {
+    font-weight: normal;
+  }
+
+  &.font-weight-light {
+    font-weight: 300;
+  }
+}
+
+.badge {
+    margin-right: 10px;
+  &.badge-primary {
+    background-color: $primary-color;
+  }
+
+  &.badge-secondary {
+    background-color: $secondary-color;
+  }
+
+  &.badge-warning {
+    background-color: $warning-color;
+  }
+}
+
+.btn-purple {
+  background-color: $btn-purple;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($btn-purple, 10%);
+  }
+}

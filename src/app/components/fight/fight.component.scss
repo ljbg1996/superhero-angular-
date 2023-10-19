@@ -1,0 +1,25 @@
+.btn-large {
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid #2c4bd3;
+  background-color: #568eff;
+  color: rgb(1, 1, 1);
+  border-radius: 5px;
+}
+
+.btn-large:hover {
+  font-size: 24px;
+  background: linear-gradient(to right, transparent, #d33a2c) no-repeat;
+  background-size: 200% 100%;
+  transition: all 1s ease-in-out;
+  animation: gradient 1s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

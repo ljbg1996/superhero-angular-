@@ -1,0 +1,55 @@
+<div class="mt-5 container">
+  <div class="d-flex justify-content-center align-items-center">
+    <button *ngIf="showFightButton" (click)="startFight()" class="btn btn-primary btn-lg btn-large">
+      Fighting!
+    </button>
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <div class="flex-grow-1 text-center">
+      <div class="attach-right">
+        <label for="attackerSelect">Select Attacker:</label>
+        <select id="attackerSelect" class="form-select" [(ngModel)]="selectAttackerId">
+          <option *ngFor="let superhuman of superhumans" [value]="superhuman.id">
+            {{ superhuman.name }}
+          </option>
+        </select>
+      </div>
+      <br>
+      <div>
+        <h2 class="text-center text-primary">Attacker</h2>
+        <app-superhuman [showButtons]="!showFightButton"
+                        [superhumanId]="selectedAttackerId"
+                        [ngClass]="{'smaller': !showFightButton}"
+                        [isDisabled]="attackerButtonIsValid"
+                        (attackEvent)="performAttack($event)">
+        Attacker
+      </app-superhuman>
+      </div>
+    </div>
+
+    <div class="mx-3"></div>
+
+    <div class="flex-grow-1 text-center">
+      <div class="attach-left">
+        <label for="defenderSelect">Select Defender:</label>
+        <select id="defenderSelect" class="form-select" [(ngModel)]="selectDefenderId">
+          <option *ngFor="let superhuman of superhumans" [value]="superhuman.id">
+            {{ superhuman.name }}
+          </option>
+        </select>
+      </div>
+      <br>
+      <div>
+        <h2 class="text-center text-danger">Defender</h2>
+        <app-superhuman [showButtons]="!showFightButton"
+                        [superhumanId]="selectedDefenderId"
+                        [ngClass]="{'smaller': !showFightButton}"
+                        [isDisabled]="!attackerButtonIsValid"
+                        (attackEvent)="performAttack($event)">
+        Defender
+      </app-superhuman>
+      </div>
+    </div>
+  </div>
+</div>

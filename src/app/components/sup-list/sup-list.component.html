@@ -1,0 +1,60 @@
+<div>
+  <h2 class="text-center mt-5 display-4">All Superhumans from Server</h2>
+  <ul *ngFor="let sup of superhumenFromServer$ | async" class="list-group text-center mt-5">
+    <li class="list-group-item bg-light text-dark font-weight-bold" routerLink="/detail/{{sup.id}}">
+      <span class="badge badge-primary">{{sup.id}}</span> <b>Name: </b>{{sup.name | uppercase}}
+    </li>
+    <li class="list-group-item" routerLink="/detail/{{sup.id}}">
+      <span class="badge">{{sup.id}}</span> <b>Hero Strength: </b>{{sup.strength}}
+    </li>
+    <li class="list-group-item" routerLink="/detail/{{sup.id}}">
+      <span class="badge">{{sup.id}}</span> <b>Hero Intelligence: </b>{{sup.intelligence}}
+    </li>
+    <li class="list-group-item" routerLink="/detail/{{sup.id}}">
+      <span class="badge">{{sup.id}}</span> <b>Hero Power: </b>{{sup.power}}
+    </li>
+    <li class="list-group-item" routerLink="/detail/{{sup.id}}">
+      <span class="badge">{{sup.id}}</span> <b>Hero HealthMax: </b>{{sup.healthMax}}
+    </li>
+    <li class="list-group-item" routerLink="/detail/{{sup.id}}">
+      <span class="badge">{{sup.id}}</span> <b>Hero ShieldMax: </b>{{sup.shieldMax}}
+    </li>
+    <li class="list-group-item" routerLink="/detail/{{sup.id}}">
+      <span class="badge">{{sup.id}}</span> <b>Power Type: </b>{{sup.powerType}}
+    </li>
+    <li class="list-group-item" routerLink="/detail/{{sup.id}}">
+      <span class="badge">{{sup.id}}</span> <b>Hero Type: </b>{{sup.heroType}}
+    </li>
+  </ul>
+</div>
+
+<br>
+<hr>
+
+<div>
+  <h2 class="text-center mt-5 display-4">All Superhumans in local</h2>
+  <ul class="list-group text-center mt-5">
+    <li *ngFor="let sup of getAllSuperhumen()" class="list-group-item font-weight-normal" routerLink="/detail/{{sup.id}}">
+      <span class="badge badge-secondary">{{sup.id}}</span> {{sup.name}}
+    </li>
+  </ul>
+</div>
+
+<br>
+
+<div>
+  <h2 class="text-center mt-5 display-4">Dead or Alive Superhumans</h2>
+  <ul class="list-group text-center mt-5">
+    <li *ngFor="let sup of superhumanToShow()" class="list-group-item font-weight-light" routerLink="/detail/{{sup.id}}">
+      <span class="badge badge-warning">{{sup.id}}</span> {{sup.id}} --> {{sup.name}} --> {{sup.dead}}
+    </li>
+  </ul>
+</div>
+
+<br>
+
+<div class="text-center">
+  <button (click)="filterDeadSuperhumans()" class="btn btn-lg btn-purple">
+    Get the dead/alive superhumans!
+  </button>
+</div>

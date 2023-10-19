@@ -1,0 +1,79 @@
+<div class="container d-flex flex-column justify-content-between align-items-center">
+  <!-- <div class="text-center mt-5">
+    <h2>Superhuman {{ superhumanFromServer.name }} Details</h2>
+
+  </div> -->
+
+  <br>
+  <br>
+  <br>
+
+  <div class="col-lg-6">
+    <div class="image-container"
+         [style.transform]="showButtons ? 'scale(1.6)' : 'scale(1)'"
+         [style.overflow]="showButtons ? 'hidden' : 'visible'">
+      <img src="./../../../assets/fotos/superhuman.png" class="fotoSize" alt="Superhuman profile">
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="col-lg-6 mt-5">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-primary">Name: {{ superhumanFromServer.name | uppercase }}</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="list-item">
+              <b>ID:</b> {{ superhumanFromServer.id }}
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="list-item">
+              <b>Strength:</b> {{ superhumanFromServer.strength }}
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="list-item">
+              <b>Intelligence:</b> {{ superhumanFromServer.intelligence }}
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="list-item">
+              <b>Power:</b> {{ superhumanFromServer.power }}
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="list-item">
+              <b>HealthMax:</b> {{ superhumanFromServer.healthMax }}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <div class="col-lg-6 d-flex justify-content-center">
+    <div class="button-group" *ngIf="showButtons">
+      <button class="button" (click)="intelligenceFight()" [disabled]="isDisabled">
+        Intelligence
+        <br>
+        <b>{{ superhumanFromServer.intelligence }}</b> !
+      </button>
+      <button class="button" (click)="powerFight()" [disabled]="isDisabled">
+        Power
+        <br>
+        <b>{{ superhumanFromServer.power }}</b> !
+      </button>
+      <button class="button" (click)="strengthFight()" [disabled]="isDisabled">
+        Strength
+        <br>
+        <b>{{ superhumanFromServer.strength }}</b> !
+      </button>
+    </div>
+  </div>
+</div>
